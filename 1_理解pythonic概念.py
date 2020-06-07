@@ -35,7 +35,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 # 1.1 两个变量交换
 def incorrect_code():
-    """ 不正确的示范 """
+    """ 不适当的示范 """
     a, b = 1, 2
     print(f'a={a},b={b}')
     tmp = a
@@ -60,7 +60,7 @@ correct_code()
 
 # 1.2 遍历一个数组
 def incorrect_code():
-    """ 不正确的示范 """
+    """ 不适当的示范 """
     alist = [1, 2]
     length = len(alist)
     i = 0
@@ -89,12 +89,13 @@ with open('README.md', 'r') as f:
 # 1.4 不应当过分的使用奇技淫巧
 
 def incorrect_code():
-    """ 不正确的示范 """
+    """ 不适当的示范 """
     a = [1, 2, 3, 4]
     print(a[::-1])
 
 
 incorrect_code()
+
 
 def correct_code():
     """ 正确的示范 """
@@ -103,3 +104,25 @@ def correct_code():
 
 
 correct_code()
+
+
+# 2. 标准库
+
+# 2.1 print
+def incorrect_code():
+    """ 不适当的示范 """
+    print('Hello %s' % ('python'))
+
+
+incorrect_code()
+
+
+def correct_code():
+    """ 正确的示范 """
+    print('Hello {language}'.format(language='python'))
+
+
+correct_code()
+
+# 2.2 pythonic 的库或框架：业内通常认为 Flask 这个框架是比较 pythonic 的
+# 包和模块的命名采用小写，单数形式，而且短小
