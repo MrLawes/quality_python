@@ -67,5 +67,21 @@ def save2():
     finally:
         print('save2: 4')
 
-
 save2()
+
+
+
+def save3():
+    try:
+        print('save3: 1')
+    except:
+        print('save3: 2')
+    else:
+        print('save3: 3')
+        return 'save3: 3'
+    finally:
+        print('save3: 4')
+        return 'save3: 4'
+
+save3()
+
