@@ -1,6 +1,6 @@
 """
 
-格式化字符串时尽量使用 .format 方式而不是 %
+Python 格式化字符串时尽量使用 .format 方式而不是 %
 
 数字格式化
 
@@ -12,8 +12,18 @@ b、d、o、x 分别是二进制、十进制、八进制、十六进制。
 
 """
 
-# 保留小数点后两位, 但是一般不应该用该方式，会导致四舍五入的错误。 >>> 3.14
-print('{:.2f}'.format(3.1415926))
+# 保留小数点后两位。但是注意不应该用该方式做四舍五入计算。 >>> 3.15
+print('{:.2f}'.format(3.155))
+
+
+# 如果需要四舍五入  >>> 3.16
+
+def get_int(num):
+    import decimal
+    return decimal.Decimal(str(num)).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_HALF_UP)
+
+
+print(get_int(3.155))
 
 # 带符号保留小数点后两位   >>> +3.14   ;  -3.14
 print('{:+.2f}'.format(3.1415926))
