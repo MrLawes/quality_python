@@ -1,10 +1,8 @@
-from operator import itemgetter
-a = [1,2,3,4]
-print(itemgetter(0, 1)(a))
+import copy
+a = {'a': 1, 'b': {'c': [1,2]}}
 
+b = copy.copy(a)
 
-a = [1,[2,3],4,5]
-print(itemgetter(0, 1)(a))
+b['b']['c'].append(3)
 
-a = {'a': 1, 'b': 2}
-print(itemgetter('a', 'b')(a))
+print(a, b)
